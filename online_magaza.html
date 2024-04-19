@@ -1,64 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500;700&family=Poppins:wght@400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./online_magaza.css">
-</head>
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500;700&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./online_magaza.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-
-        <div id="main_page">
-            <div id="head">
-                <p class="homepage">Home Page</p>
-                <div id="headrigth">
-                    <div id="box"></div>
-                    <img src="./images/bag-2.svg" alt="">
-                    <p class="sebet">Səbət</p>
-                    <div id="chart_counter">0</div>
-                </div>
-            </div>
-            <div id="main">
-                <div class="lines">
-                </div>
-            </div>
+      <div id="main_page">
+        <div id="head">
+          <p class="homepage">Home Page</p>
+          <div id="headrigth">
+            <div id="box"></div>
+            <img src="./images/bag-2.svg" alt="" />
+            <p class="sebet">Səbət</p>
+            <div id="chart_counter">0</div>
+          </div>
         </div>
-
-        <div id="cart">
-            <img src="./images/Close.svg" alt="close" id="close">
-            <p class="shopping_cart">Shopping Cart</p>
-            <div id="cart_Main">
-            </div>
-            <div class="chart_bottom">
-                <div id="checkout_BOX">
-                </div>
-                <button id="checkout_button">Checkout</button>
-                <p id="contTO_shopping">Continue shopping</p>
-            </div>
-
+        <div id="main">
+          <div class="lines"></div>
         </div>
+      </div>
 
+      <div id="cart">
+        <img src="./images/Close.svg" alt="close" id="close" />
+        <p class="shopping_cart">Shopping Cart</p>
+        <div id="cart_Main"></div>
+        <div class="chart_bottom">
+          <div id="checkout_BOX">
+            <div id="subtotal">
+              <p class="subtotal_text checkout_text">Subtotal</p>
+              <p class="subtotal_price checkout_text">
+                ${subtotal = subtotal + (el.price * el.count)}<span>AZN</span>
+              </p>
+            </div>
+            <div id="shipping">
+              <p class="shipping_text checkout_text">Shipping estimate</p>
+              <p class="shipping_price checkout_text">50<span>AZN</span></p>
+            </div>
+            <div id="tax">
+              <p class="tax_text checkout_text">Tax estimate</p>
+              <p class="tax_price checkout_text">
+                ${subtotal * 18 / 100}<span>AZN</span>
+              </p>
+            </div>
 
-
-
-
-
-
-
+            <div id="total">
+              <p class="total_text">Order Total</p>
+              <p class="total_price">
+                ${subtotal + 50 + subtotal * 18 / 100}<span>AZN</span>
+              </p>
+            </div>
+          </div>
+          <button id="checkout_button">Checkout</button>
+          <p id="contTO_shopping">Continue shopping</p>
+        </div>
+      </div>
     </div>
-
-
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./online_magaza.js"></script>
-</body>
-
+  </body>
 </html>

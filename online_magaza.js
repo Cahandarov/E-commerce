@@ -75,6 +75,7 @@ function addTO_cart(data) {
             cart_counter.innerText = cart_array.length;
             cartData(cart_array);
             calculate_Cart(cart_array);
+            
         });
     });
 }
@@ -87,7 +88,6 @@ function openCart() {
     if (cart_array.length > 0) {
         main_page.style.display = "none";
         cart_page.style.display = "block";
-        resetButtonStyles();
     }
 }
 
@@ -149,11 +149,11 @@ function cartData(arr) {
 function removeFROM_cart(el, index) {
     cart_array.splice(index, 1);
     cart_counter.innerText = cart_array.length;
-    console.log(cart_array)
     cartData(cart_array)
     calculate_Cart(cart_array)
     if (cart_array.length < 1) {
         closeCart();
+        resetButtonStyles(index);
     }
 }
 
@@ -195,29 +195,19 @@ function resetButtonStyles() {
 }
 
 
-// // JavaScript kodunda, seçenek değişikliğini dinlemek için bu kodu kullanabilirsiniz:
-// const selectElements = document.querySelectorAll(".select_option");
 
-// selectElements.forEach((selectElement) => {
-//     selectElement.addEventListener("change", (e) => {
-//         console.log(selectElements)
-//         const selectedQuantity = parseInt(e.target.value, 10); // Seçilen miktarı alın
-//         const productElement = e.target.closest(".product"); // Ürünü bulun
+const selectElements = document.querySelectorAll(".select_option");
 
-//         // Ürünün fiyatını ve toplam fiyatını güncelleyin
-//         const priceElement = productElement.querySelector(".price");
-//         const totalPriceElement = productElement.querySelector(".total-price");
+selectElements.forEach((selectElement) => {
+    selectElement.addEventListener("change", (e) => {
+        console.log(selectElements)
+        console.log(e)
 
-//         const price = parseFloat(priceElement.textContent);
-//         const newTotalPrice = (price * selectedQuantity).toFixed(2) + " AZN";
+    
 
-//         priceElement.textContent = newTotalPrice;
-//         totalPriceElement.textContent = newTotalPrice;
-
-//         // Sepet toplamını yeniden hesaplayın
-//         calculate_Cart(cart_array);
-//     });
-// });
+        calculate_Cart(cart_array);
+    });
+});
 
 
 
